@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SeiveofEratosthenes2 {
+public class SieveofEratosthenes3 {
 	
 	public static boolean isPrime(int N) {
 		
@@ -45,7 +45,7 @@ public class SeiveofEratosthenes2 {
 		{
 			if (isPrime(i))
 			{
-				for (int j = 2*i; j<N; j= j+i)
+				for (int j = i*i; j<N; j= j+i)/*Replacing 2 * i with  i* i*/
 				{
 					Arr[j] = false;
 				}
@@ -67,5 +67,6 @@ public class SeiveofEratosthenes2 {
 		}
 		
 	}
+
 
 }

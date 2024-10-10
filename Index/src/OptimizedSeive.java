@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class SeiveofEratosthenes2 {
-	
+public class OptimizedSeive {
 	public static boolean isPrime(int N) {
 		
 		
@@ -27,7 +26,7 @@ public class SeiveofEratosthenes2 {
 		}
 			return true;
 		}
-
+	
 	
 	public static void main (String[] args)
 	{
@@ -41,31 +40,20 @@ public class SeiveofEratosthenes2 {
 			Arr[a]=true;
 		}
 		
-		for (int i=2; i*i<=N; i++)
+		for (int i=2; i<=N; i++)
 		{
 			if (isPrime(i))
 			{
-				for (int j = 2*i; j<N; j= j+i)
+				System.out.print(i);
+				System.out.print(" ");
+				for (int j = i*i; j<N; j= j+i)/*Replacing 2 * i with  i* i*/
 				{
 					Arr[j] = false;
 				}
 			}
 			
 		}
-		
-		
-		for (int m=2; m<=N; m++)
-		{
-			if (Arr[m])
-			{
 				
-				System.out.print(m);
-				System.out.print(" ");
-			}
-
-			
-		}
-		
 	}
 
 }
